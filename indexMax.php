@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="web design responsive">
-	<meta name="author" content="Maxime Zupka">
 	<title>BDE CESI - Lyon</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,10 +17,10 @@
   			<ul class="list-unstyled">
     			<li><a data-placement="bottom" data-toggle="popover" data-title="Login" data-container="body" type="button" data-html="true" href="#" id="login">Connexion</a></li>
     		<div id="popover-content" class="hide">
-      			<form class="form-inline" role="form">
+      			<form class="form-inline" role="form" action="login.php" method="POST">
         			<div class="form-group">
-          				<input type="text" placeholder="Username" class="form-control" maxlength="30">
-          				<input type="password" placeholder="Password" class="form-control">
+          				<input type="text" name="username" placeholder="Username" class="form-control" maxlength="30">
+          				<input type="password" name="password" placeholder="Password" class="form-control">
           				<button type="submit" class="btn btn-primary">Log in</button>
         			</div>
       			</form>
@@ -30,6 +29,8 @@
     		<div id="popover-content2" class="hide">
       			<form class="form-inline" role="form">
         			<div class="form-group">
+        				<input type="text" name="nom" placeholder="Nom" class="form-control">
+          				<input type="text" name="prenom" placeholder="Prénom" class="form-control">
           				<input type="text" name="username" placeholder="Username" class="form-control" maxlength="30">
           				<input type="email" name="email" placeholder="Email" class="form-control">
           				<input type="password" name="pass1" placeholder="Password" class="form-control">

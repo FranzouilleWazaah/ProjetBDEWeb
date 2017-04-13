@@ -1,5 +1,11 @@
 <?php
+
+// est appelé par l'index lorsque l'utilisateur fait l'action de rentrer ses identifiants
+// cela compare les identifiants que l'utilisateur a écrit et ceux en base de donnée
+
         include_once('db.php');
+        include_once('fonctions/Alert.php');
+     //   include_once('fonctions/encryption.php');
 
  		if($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -18,10 +24,13 @@
   		
 
 		if ($row['username'] == $username && $row['password'] == $password) {
-			echo "Login success ! Welcome ".$row['username']; 
+			
+			Alert("Login success ! Welcome on the BDE of CESI Lyon !");
+			// header('Location: home.php');
 		} else {
-			echo "Failed to login, try again !";
-		}
-		
+			
+		Alert("Failed to login, try again please.");
+		// header('Location: login.php');
  }
+}
 ?>
