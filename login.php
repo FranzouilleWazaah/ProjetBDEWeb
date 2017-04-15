@@ -70,7 +70,7 @@ if(isset($_POST['btn-signup']))
       $error[] = "Password must contains a maximum of 25 characters"; 
    }
    
-   else if ($_POST["password"] != $_POST["confirmpassword"]) {
+   else if ($password != $_POST['confirmpassword']) {
    	  $error[] = "2 passwords does not match!";
    }
    
@@ -79,7 +79,7 @@ if(isset($_POST['btn-signup']))
    {
       try
       {
-         $stmt = $login->runQuery("SELECT username FROM utilisateur WHERE username=:username");
+         $stmt = $login->runQuery("SELECT username FROM utilisateur WHERE username=:username OR email=:email");
          $stmt->execute(array(':username'=>$username, ':email'=>$email));
          $row=$stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -141,7 +141,7 @@ if(isset($_POST['btn-signup']))
 		
             
 							<div class="col-xs-6">
-								<a href="register.php" id="register-form-link">Register</a>
+								<a href="#" id="register-form-link">Register</a>
 							</div>
 						</div>
 						<hr>
@@ -198,7 +198,7 @@ if(isset($_POST['btn-signup']))
 			{
 				 ?>
                  <div class="alert alert-info">
-                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered.
+                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; 
                  </div>
                  <?php
 			}
@@ -228,8 +228,8 @@ if(isset($_POST['btn-signup']))
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="btn-signup" tabindex="4" class="form-control btn btn-register" value="Register Now">
+											<div class="text-center">
+												<button type="submit" name="btn-signup" tabindex="4" class="btn btn-primary">Register</button>
 											</div>
 										</div>
 									</div>

@@ -42,7 +42,7 @@ require_once("session.php");
 		</nav>
 		</div>
 	</header>
-	<label><a href="logout.php"><i class="glyphicon glyphicon-log-out"></i>Log out</a></label>
+	<label><a href='logout.php'><i class="glyphicon glyphicon-log-out"></i> Log out</a></label>
 	<section>
 		<div class="content">
 		welcome : <?php print($userRow['username']); ?>

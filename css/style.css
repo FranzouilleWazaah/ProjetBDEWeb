@@ -59,6 +59,11 @@ body{
 	box-shadow: none;
 	border-color: #ccc;
 }
+.btn btn btn-primary {
+	text-align: center;
+	position: absolute;
+    top: 50%;
+}
 .btn-login {
 	background-color: #59B2E0;
 	outline: none;
@@ -76,6 +81,7 @@ body{
 	background-color: #53A3CD;
 	border-color: #53A3CD;
 }
+
 .forgot-password {
 	text-decoration: underline;
 	color: #888;
