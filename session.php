@@ -11,5 +11,5 @@
 	if(!$session->is_loggedin())
 	{
 		// session no set redirects to login page
-		$session->redirect("C:/Wamp64/www/ProjetBDEWeb/home.php");
+		$session->redirect("C:/Wamp64/www/ProjetBDEWeb/login.php");
 	}
