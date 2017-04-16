@@ -19,19 +19,18 @@ class USER
     return $stmt;
   }
  
-    public function register($username,$password,$nom,$prenom,$email)
+    public function register($nom,$prenom,$username,$email,$password)
     {
        try
        {
            $new_password = password_hash($password, PASSWORD_DEFAULT);
    
-           $stmt = $this->conn->prepare("INSERT INTO utilisateur(username,password,nom,prenom,email) 
-                                                       VALUES(:username,:password,:nom,:prenom,:email)");
-              
+           $stmt = $this->conn->prepare("INSERT INTO utilisateur(nom,prenom,username,email,password) 
+                                                       VALUES(:nom,:prenom,:username,:email,:password)");
+           $stmt->bindparam(":nom", $nom);
+           $stmt->bindparam(":prenom", $prenom); 
            $stmt->bindparam(":username", $username);
            $stmt->bindparam(":password", $new_password); 
-           $stmt->bindparam(":nom", $username);
-           $stmt->bindparam(":prenom", $username);  
            $stmt->bindparam(":email", $email);          
            $stmt->execute(); 
    

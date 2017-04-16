@@ -11,5 +11,9 @@
 	if(!$session->is_loggedin())
 	{
 		// session no set redirects to login page
+<<<<<<< HEAD
 		$session->redirect("C:/xampp/htdocs/website/ProjetBDEWeb/home.php");
+=======
+		$session->redirect("C:/Wamp64/www/ProjetBDEWeb/login.php");
+>>>>>>> origin/master
 	}

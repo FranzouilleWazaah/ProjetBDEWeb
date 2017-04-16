@@ -19,8 +19,8 @@ $login->redirect("home.php");
 
 if(isset($_POST['btn-login']))
 {
- $username = $_POST['username'];
- $password = $_POST['password'];
+ $username = $_POST['username1'];
+ $password = $_POST['password1'];
   
  if($login->login($username,$password))
  {
@@ -79,7 +79,7 @@ if(isset($_POST['btn-signup']))
    {
       try
       {
-         $stmt = $login->runQuery("SELECT username FROM utilisateur WHERE username=:username OR email=:email");
+         $stmt = $login->runQuery("SELECT username, email FROM utilisateur WHERE username=:username OR email=:email");
          $stmt->execute(array(':username'=>$username, ':email'=>$email));
          $row=$stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -91,10 +91,10 @@ if(isset($_POST['btn-signup']))
          }
          else
          {
-            if($login->register($username,$password,$nom,$prenom,$email)) 
+            if($login->register($nom,$prenom,$username,$email,$password)) 
             {
             	alert("Succesfully registered.");
-                $login->redirect("home.php");
+                $login->redirect("login.php");
             }
          }
      }
@@ -127,7 +127,7 @@ if(isset($_POST['btn-signup']))
 		<div id="branding">
 			<img src="img/logo_bde.png">
 		</div>
-		
+	</header>
 		<div class="container">
         <div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -151,10 +151,10 @@ if(isset($_POST['btn-signup']))
 							<div class="col-lg-12">
 								<form id="login-form" role="form" method="POST" style="display: block;">
 									<div class="form-group">
-										<input type="text" name="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<input type="text" name="username1" tabindex="1" class="form-control" placeholder="Username">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password"  tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="password1"  tabindex="2" class="form-control" placeholder="Password">
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" id="cookie" name="cookie" >
@@ -212,24 +212,24 @@ if(isset($_POST['btn-signup']))
 										<input type="text" name="nom" tabindex="1" class="form-control" placeholder="Last name">
 									</div>
 									<div class="form-group">
-										<input type="text" name="prenom" tabindex="1" class="form-control" placeholder="Name">
+										<input type="text" name="prenom" tabindex="2" class="form-control" placeholder="Name">
 									</div>
 									<div class="form-group">
-										<input type="text" name="username" tabindex="1" class="form-control" placeholder="Username">
+										<input type="text" name="username" tabindex="3" class="form-control" placeholder="Username">
 									</div>
 									<div class="form-group">
-										<input type="email" name="email" tabindex="1" class="form-control" placeholder="Email Address">
+										<input type="email" name="email" tabindex="4" class="form-control" placeholder="Email Address">
 									</div>
 									<div class="form-group">
-										<input type="password" name="password" tabindex="2" class="form-control" placeholder="Password">
+										<input type="password" name="password" tabindex="5" class="form-control" placeholder="Password">
 									</div>
 									<div class="form-group">
-										<input type="password" name="confirmpassword"  tabindex="2" class="form-control" placeholder="Confirm Password">
+										<input type="password" name="confirmpassword"  tabindex="5" class="form-control" placeholder="Confirm Password">
 									</div>
 									<div class="form-group">
 										<div class="row">
 											<div class="text-center">
-												<button type="submit" name="btn-signup" tabindex="4" class="btn btn-primary">Register</button>
+												<button type="submit" name="btn-signup" tabindex="6" class="btn btn-primary">Register</button>
 											</div>
 										</div>
 									</div>
@@ -241,7 +241,7 @@ if(isset($_POST['btn-signup']))
 			</div>
 		</div>
 	</div>
-	</header>
+	
 	<section>
 		
 	</section>
