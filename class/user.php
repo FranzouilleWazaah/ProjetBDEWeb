@@ -1,6 +1,6 @@
 <?php
 require_once("DBconnection.php");
-require_once("C:/wamp64/www/ProjetBDEWeb/fonctions/Alert.php");
+require_once("C:/xampp/htdocs/website/ProjetBDEWeb/fonctions/Alert.php");
 
 class USER
 {

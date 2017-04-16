@@ -1,6 +1,6 @@
 <?php
-	require_once("C:/Wamp64/www/ProjetBDEWeb/session.php");
-	require_once("C:/Wamp64/www/ProjetBDEWeb/class/user.php");
+	require_once("C:/xampp/htdocs/website/ProjetBDEWeb/session.php");
+	require_once("C:/xampp/htdocs/website/ProjetBDEWeb/class/user.php");
 	$user_logout = new USER();
 	
 	session_destroy();
