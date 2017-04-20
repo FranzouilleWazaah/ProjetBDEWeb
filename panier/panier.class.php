@@ -1,0 +1,53 @@
+<?php 
+class Panier{
+
+	private $db;
+
+	public function __construct($db){
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		if(!isset($_SESSION['panier'])){
+			$_SESSION['panier'] = array();
+		}
+		$this->db = $db;
+		if(isset($_GET['delPanier'])){
+			$this->del($_GET['delPanier']);
+		}
+	}
+
+	// total product
+	public function count(){
+		return array_sum($_SESSION['panier']);
+	}
+
+	// total price
+	public function total(){
+		$total = 0;
+		$ids = array_keys($_SESSION['panier']);
+		if(empty($ids)){
+			$products = array();
+		}else{
+		$products = $this->db->query('SELECT id, prix FROM boutique WHERE id IN ('.implode(',',$ids).')');
+		}
+		foreach($products as $product){
+			$total += $product->prix * $_SESSION['panier'][$product->id];
+		}
+		return $total;
+	}
+
+	// add product
+	public function add($product_id){
+		if(isset($_SESSION['panier'][$product_id])){
+			$_SESSION['panier'][$product_id]++;
+		}else{
+		$_SESSION['panier'][$product_id] = 1;
+		}
+	}
+
+	// delete product
+	public function del($product_id){
+		unset($_SESSION['panier'][$product_id]);
+	}
+}
+?>

@@ -1,0 +1,310 @@
+body{
+	font: 15px/1.5 Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: #f4f4f4;
+	overflow: auto;
+}
+
+.panel-login {
+    border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+}
+.panel-login>.panel-heading a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+	color: #c81e28;
+	font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 45px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.btn btn btn-primary {
+	text-align: center;
+	position: absolute;
+    top: 50%;
+}
+.btn-login {
+	background-color: #C81E28;
+	outline: none;
+	color: #C81E28;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #C81E28;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+
+.btn-register {
+	background-color: #1CB94E;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
+.button-logout {
+  background-color: #7198E7;
+  box-shadow:0px 2px 2px #466196;
+  border-radius: 3px;
+  font-family: Arial;
+  color: white;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.button-logout:hover {
+  background-color: #5d7ec1;
+}
+head{
+	background-color: #696969;
+}
+
+/* Header */
+header{
+	color: #696969;
+	min-height: 70px;
+	border-bottom: 3px solid #c61e22;
+}
+header #branding img{
+	margin: auto;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+header .list-unstyled li a{
+
+	width: 100px;
+	text-align: center;
+	background-color: #7198E7;
+	padding: 5px;
+	border-radius: 5px;
+	float: right;
+	color: #ffffff;
+	margin: 20px 20px 0 0;
+}
+header nav{
+	
+}
+header nav ul{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+header nav ul li{
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+header nav ul li a{
+	color: #000000;
+	text-decoration: none;
+	font-size: 25px;
+}
+header nav ul li a:hover{
+	color: #c61e22;
+	text-decoration: none;
+}
+header .current a{
+	color: #c61e22;
+}
+
+#Avatar {
+	float:right;
+	width:150px;
+	background-color: #d9d9d9;
+	border-radius: 3px;
+	text-align: center;
+	border: 1px solid #7198E7;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+#Avatar b{
+	color: #7198E7;
+}
+#contact_form {
+	margin: 3%;
+    width: 50%;    /* Pour voir les limites du formulaire */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+#contact_form div + div {
+    margin-top: 2em;
+}
+
+label {
+    /* Afin de s'assurer que toutes les étiquettes aient la même dimension et soient alignées correctement */
+    display: inline-block;
+    width: 80px;
+    height: 50px;
+    text-align: left;
+}
+
+input, textarea {
+    /* Afin de s'assurer que tous les champs textuels utilisent la même police
+       Par défaut, textarea utilise une police à espacement constant */
+    font: 1em sans-serif;
+
+    /* Pour donner la même dimension à tous les champs textuels */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Pour harmoniser l'apparence des bordures des champs textuels */
+    border: 1px solid black;
+}
+
+input:focus, textarea:focus {
+    /* Afin de rehausser les éléments actifs */
+    border-color: black;
+}
+
+textarea {
+    /* Pour aligner correctement les champs multilignes et leurs étiquettes */
+    vertical-align: top;
+
+    /* Pour donner assez d'espace pour entrer du texte */
+    height: 15em;
+    width: 30em;
+
+    /* Pour permettre aux utilisateurs de redimensionner un champ textuel horizontalement
+       Cela ne marche pas avec tous les navigateurs  */
+    resize: vertical;
+}
+ 
+.fill {
+    width:100%;
+    height:100%;
+    background-position:center;
+    background-size:cover;
+    margin: 0;
+}
+/* Boutique */
+#boutiqueDescription
+{
+	text-align: center;
+	margin-bottom: 30px;
+}
+table.tabBoutique{
+	width: 100%;
+	margin-bottom: 10px;
+}
+table.tabBoutique th, table.tabBoutique td{
+	width: 20%;
+	text-align: center;
+	border: 1px solid black;
+}
+table.tabBoutique tr td a{
+	background-color: #7198E7;
+	padding: 5px;
+	border-radius: 5px;	
+	color: white;
+	text-decoration: none;
+}
+table.tabBoutique tr th{
+	color: #c61e22;
+}
+table.tabBoutique tr td a:hover{
+	background-color: #5d7ec1;
+}
+#sectionBoutique .cart{
+	background-color: #7198E7;
+	padding: 5px;
+	border-radius: 5px;	
+	color: white;
+	text-decoration: none;
+}
+#sectionBoutique .cart:hover{
+	background-color: #5d7ec1;
+}
+
+/* Footer */
+footer{
+
+	position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+    height:70px;
+    width:100%;
+	padding: 20px;
+	margin-top: 20px;
+	color: #000000;
+	background-color: #c61e22;
+	text-align: center;
+}
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
