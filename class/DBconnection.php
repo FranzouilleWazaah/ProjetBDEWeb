@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 class Database2
+=======
+class Database
+>>>>>>> origin/master
 { 
  	private $host = "localhost";
     private $db_name = "projetweb";

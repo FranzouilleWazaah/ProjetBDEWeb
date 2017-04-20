@@ -1,11 +1,19 @@
 <?php
 require_once  ("class/DBconnection.php");
 require_once ("class/user.php");
+<<<<<<< HEAD
 require_once("fonctions/Alert.php");
 
 $login = new USER();
 session_start();
 
+=======
+require_once("C:/xampp/htdocs/website/ProjetBDEWeb/fonctions/Alert.php");
+
+$login = new USER();
+
+session_start();
+>>>>>>> origin/master
 
 // Procédure pour se logger
 
@@ -19,12 +27,21 @@ $login->redirect("home.php");
 
 if(isset($_POST['btn-login']))
 {
+<<<<<<< HEAD
  $username = $_POST['username'];
  $password = $_POST['password'];
  
   
  if($login->login($username,$password))
  {
+=======
+ $username = $_POST['username1'];
+ $password = $_POST['password1'];
+  
+ if($login->login($username,$password))
+ {
+  
+>>>>>>> origin/master
   $login->redirect("home.php");
 
  }
@@ -38,15 +55,21 @@ if(isset($_POST['btn-login']))
 
 if(isset($_POST['btn-signup']))
 {
+<<<<<<< HEAD
 	//trim() retourne la chaîne str , après avoir supprimé les caractères invisibles en début et fin de chaîne. 
+=======
+>>>>>>> origin/master
    $nom = trim($_POST['nom']);
    $prenom = trim($_POST['prenom']);
    $username = trim($_POST['username']);
    $email = trim($_POST['email']);
    $password = trim($_POST['password']); 
+<<<<<<< HEAD
    $imgFile = $_FILES['user_image']['name'];
    $tmp_dir = $_FILES['user_image']['tmp_name'];
    $imgSize = $_FILES['user_image']['size'];
+=======
+>>>>>>> origin/master
 
     if($nom=="") {
       $error[] = "Provide a lastname please !"; 
@@ -77,9 +100,12 @@ if(isset($_POST['btn-signup']))
    else if ($password != $_POST['confirmpassword']) {
    	  $error[] = "2 passwords does not match!";
    }
+<<<<<<< HEAD
    else if(empty($imgFile)){
    	  $error[] = "Please Select Image File.";
 		}
+=======
+>>>>>>> origin/master
    
 
    else
@@ -89,6 +115,7 @@ if(isset($_POST['btn-signup']))
          $stmt = $login->runQuery("SELECT username, email FROM utilisateur WHERE username=:username OR email=:email");
          $stmt->execute(array(':username'=>$username, ':email'=>$email));
          $row=$stmt->fetch(PDO::FETCH_ASSOC);
+<<<<<<< HEAD
          $upload_dir = 'user_images/'; // upload directory
          // strtolower returns a string in lowercase
          // the image extension
@@ -97,6 +124,8 @@ if(isset($_POST['btn-signup']))
          $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
          // rename uploading image
          $userPic = rand(1000,1000000).".".$imgExt;
+=======
+>>>>>>> origin/master
     
          if($row['username']==$username) {
             $error[] = "Sorry username already taken !";
@@ -104,6 +133,7 @@ if(isset($_POST['btn-signup']))
          else if($row['email']==$email) {
             $error[] = "Sorry email address already taken !";
          }
+<<<<<<< HEAD
          else if(in_array($imgExt, $valid_extensions)){	
          // Check file size '5MB'
          	if($imgSize < 5000000)			
@@ -122,6 +152,17 @@ if(isset($_POST['btn-signup']))
        
      }
      
+=======
+         else
+         {
+            if($login->register($nom,$prenom,$username,$email,$password)) 
+            {
+            	alert("Succesfully registered.");
+                $login->redirect("login.php");
+            }
+         }
+     }
+>>>>>>> origin/master
      catch(PDOException $e)
      {
         echo $e->getMessage();
@@ -129,7 +170,10 @@ if(isset($_POST['btn-signup']))
   } 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -150,7 +194,11 @@ if(isset($_POST['btn-signup']))
 	<header>
 		
 		<div id="branding">
+<<<<<<< HEAD
 			<img src="img/logo_bde.png" width="250px" height="250px">
+=======
+			<img src="img/logo_bde.png">
+>>>>>>> origin/master
 		</div>
 	</header>
 		<div class="container">
@@ -160,7 +208,11 @@ if(isset($_POST['btn-signup']))
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col-xs-6">
+<<<<<<< HEAD
 								<a href="#" class="active" id="login-form-link">Sign in</a>
+=======
+								<a href="#" class="active" id="login-form-link">Log in</a>
+>>>>>>> origin/master
 							</div>
 							
 		
@@ -176,10 +228,21 @@ if(isset($_POST['btn-signup']))
 							<div class="col-lg-12">
 								<form id="login-form" role="form" method="POST" style="display: block;">
 									<div class="form-group">
+<<<<<<< HEAD
 										<input type="text" name="username" tabindex="1" class="form-control" placeholder="Username">
 									</div>
 									<div class="form-group">
 										<input type="password" name="password"  tabindex="2" class="form-control" placeholder="Password">
+=======
+										<input type="text" name="username1" tabindex="1" class="form-control" placeholder="Username">
+									</div>
+									<div class="form-group">
+										<input type="password" name="password1"  tabindex="2" class="form-control" placeholder="Password">
+									</div>
+									<div class="form-group text-center">
+										<input type="checkbox" tabindex="3" id="cookie" name="cookie" >
+										<label for="remember"> Remember Me</label>
+>>>>>>> origin/master
 									</div>
 									<div class="form-group">
 										<div class="row">
@@ -215,10 +278,27 @@ if(isset($_POST['btn-signup']))
                      <?php
 				}
 			}
+<<<<<<< HEAD
 			
 			?>
 								</form>
 								<form id="register-form" action="" enctype="multipart/form-data" method="post" role="form" style="display: none;">
+=======
+			else if(isset($_GET['joined']))
+			{
+				 ?>
+                 <div class="alert alert-info">
+                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; 
+                 </div>
+                 <?php
+			}
+			?>
+			
+		
+           
+								</form>
+								<form id="register-form" action="" method="post" role="form" style="display: none;">
+>>>>>>> origin/master
 									<div class="form-group">
 										<input type="text" name="nom" tabindex="1" class="form-control" placeholder="Last name">
 									</div>
@@ -237,10 +317,13 @@ if(isset($_POST['btn-signup']))
 									<div class="form-group">
 										<input type="password" name="confirmpassword"  tabindex="5" class="form-control" placeholder="Confirm Password">
 									</div>
+<<<<<<< HEAD
 									<p>Please choose a picture as avatar</p>
 									<div class="form-group">
 										<input type="file" name="user_image"  tabindex="6" class="form-control" accept="image/* ">
 									</div>
+=======
+>>>>>>> origin/master
 									<div class="form-group">
 										<div class="row">
 											<div class="text-center">
@@ -260,12 +343,16 @@ if(isset($_POST['btn-signup']))
 	<section>
 		
 	</section>
+<<<<<<< HEAD
 <footer>
 		<div class="container">
 			<p>BDE CESI - Lyon, Copyright &copy; 2017</p>
 		</div>
 		
 	</footer>
+=======
+
+>>>>>>> origin/master
 	
 
 </body>
