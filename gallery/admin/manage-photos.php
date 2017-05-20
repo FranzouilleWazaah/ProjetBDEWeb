@@ -233,7 +233,7 @@ foreach ($dbo->query($query) as $nt) {
 if($i >=4){echo "</tr><tr>";$i=1;}
 $id=$nt['img_id'];
 $img=$nt['file_name'];
-echo "<td class='data'  width='300' height='170' valign=top><a href='gallery/photo.php?id=$id' target='new'><img src='../$path_thumbnail$img' border=0></a><br>
+echo "<td class='data'  width='300' height='170' valign=top><a href='../photo.php?id=$id' target='new'><img src='../$path_thumbnail$img' border=0></a><br>
 <div id=$id"."title>$nt[title]</div>
 <div id=$id"."button><input type=button  onClick=editnow([$id]); value='Edit'></div> <img src=../del.jpg onClick=ajaxFunction($id,'Delete') align=righ>
 
